@@ -1,10 +1,5 @@
-import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: red;
-`;
+import Input from '../components/Input/index';
 
 export default function Home() {
-  return <Title>Yeahhhhh</Title>;
+  return <Input value={'nome'} />;
 }
