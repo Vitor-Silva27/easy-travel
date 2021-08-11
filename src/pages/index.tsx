@@ -1,5 +1,5 @@
-import MainTitle from '../components/MainTitle';
+import FormButton from '../components/FormButton';
 
 export default function Home() {
-  return <MainTitle value={'Cadastrar'} />;
+  return <FormButton value="Criar conta" />;
 }
