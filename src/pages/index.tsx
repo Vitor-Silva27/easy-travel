@@ -1,5 +1,5 @@
-import Input from '../components/Input/index';
+import MainTitle from '../components/MainTitle';
 
 export default function Home() {
-  return <Input value={'nome'} />;
+  return <MainTitle value={'Cadastrar'} />;
 }

@@ -21,6 +21,7 @@ export const Label = styled.label`
   &::before {
     content: '';
     position: absolute;
+    display: block;
     left: 2px;
     top: -6px;
     width: 16px;
