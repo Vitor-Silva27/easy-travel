@@ -6,26 +6,39 @@ export const Form_input = styled.input`
   width: 55rem;
   height: 3rem;
   border-bottom: 1px solid #70787d;
+  padding-left: 3rem;
 
   &::placeholder {
-    padding-left: 3.2rem;
-    color: #70787d;
-    text-transform: capitalize;
+    position: absolute;
+    left: 3.2rem;
+    bottom: 0.8rem;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 0.8;
     font-weight: 700;
+    text-transform: capitalize;
+
+    color: rgba(21, 34, 43, 60%);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #22a6f9;
   }
 `;
 
 export const Label = styled.label`
-  position: relative;
+  display: none;
+`;
 
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    left: 2px;
-    top: -6px;
-    width: 16px;
-    height: 17px;
-    background: url('./assets/user_icon.svg') no-repeat;
-  }
+export const Input_wrapper = styled.div`
+  position: relative;
+  margin: 4rem 0 0 0;
+`;
+
+export const Input_icon = styled.img`
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.2rem;
 `;

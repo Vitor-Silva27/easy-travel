@@ -7,7 +7,7 @@ type ButtonProps = {
 };
 
 const FormButton = ({ value }: ButtonProps) => {
-  return <Button type="button">{value}</Button>;
+  return <Button type="submit">{value}</Button>;
 };
 
 export default FormButton;
