@@ -9,7 +9,13 @@ type InputProps = {
   isRequired: boolean;
 };
 
-const Input = ({ value, img_path, type, isRequired }: InputProps) => {
+const Input = ({
+  value,
+  img_path,
+  type,
+  isRequired,
+  ...register
+}: InputProps) => {
   return (
     <Input_wrapper>
       <Input_icon src={img_path} alt={value} />
@@ -20,6 +26,7 @@ const Input = ({ value, img_path, type, isRequired }: InputProps) => {
         name={value}
         placeholder={value}
         required={isRequired}
+        {...register}
       />
     </Input_wrapper>
   );
