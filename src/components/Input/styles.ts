@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Form_input = styled.input`
   border: none;
   background-color: transparent;
-  width: 55rem;
+  width: 98%;
   height: 3rem;
   border-bottom: 1px solid #70787d;
   padding-left: 3rem;

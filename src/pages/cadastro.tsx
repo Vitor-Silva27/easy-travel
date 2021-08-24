@@ -18,12 +18,11 @@ export default function Cadastro() {
       <Head>
         <title>Cadastro</title>
       </Head>
-      <div style={{ display: 'flex' }}>
-        <CadastroImage
-          src="/assets/Cadastro-img.png"
-          alt="Image of a traveller"
-        />
-      </div>
+      <CadastroImage
+        src="/assets/Cadastro-img.png"
+        alt="Image of a traveller"
+      />
+
       <FormWrapper>
         <img src="./assets/logo.svg" alt="easy travel" className="logo" />
         <MainTitle value="Cadastrar" />

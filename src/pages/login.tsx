@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Head from 'next/head';
@@ -6,6 +7,7 @@ import Link from 'next/link';
 import { Button } from '../components/FormButton/styles';
 import Input from '../components/Input';
 import MainTitle from '../components/MainTitle';
+import { AuthContext } from '../contexts/AuthContext';
 import {
   Form,
   LoginImage,
@@ -15,15 +17,15 @@ import {
 } from '../styles/pages/Login';
 
 interface SignInData {
-  email: string;
+  username: string;
   password: string;
 }
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
-
-  function handleSignIn(data: SignInData) {
-    console.log(data);
+  const { signIn } = useContext(AuthContext);
+  async function handleSignIn(data: SignInData) {
+    await signIn(data);
   }
 
   return (
@@ -36,10 +38,10 @@ export default function Login() {
         <MainTitle value="Fazer Login" />
         <Form onSubmit={handleSubmit(handleSignIn)}>
           <Input
-            {...register('email')}
-            value="email"
-            img_path="./assets/email_icon.svg"
-            type="email"
+            {...register('username')}
+            value="username"
+            img_path="./assets/user_icon.svg"
+            type="text"
             isRequired
           />
           <Input
@@ -57,9 +59,7 @@ export default function Login() {
           </DontHave>
         </Link>
       </FormWrapper>
-      <div style={{ display: 'flex' }}>
-        <LoginImage src="/assets/login-img.png" alt="Image of a traveller" />
-      </div>
+      <LoginImage src="/assets/login-img.png" alt="Image of a traveller" />
     </LoginWrapper>
   );
 }
