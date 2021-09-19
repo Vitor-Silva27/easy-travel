@@ -24,6 +24,7 @@ interface SignInData {
 export default function Login() {
   const { register, handleSubmit } = useForm();
   const { signIn } = useContext(AuthContext);
+
   async function handleSignIn(data: SignInData) {
     await signIn(data);
   }

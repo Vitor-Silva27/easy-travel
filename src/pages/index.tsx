@@ -1,3 +1,8 @@
+import { useContext } from 'react';
+
+import { AuthContext } from '../contexts/AuthContext';
+
 export default function Home() {
-  return <div>bem vindo</div>;
+  const { user } = useContext(AuthContext);
+  return <h1>bem vindo {user?.username}</h1>;
 }
