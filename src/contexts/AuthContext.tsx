@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { useJwt } from 'react-jwt';
 
 import Router from 'next/router';
 import { setCookie, parseCookies } from 'nookies';
