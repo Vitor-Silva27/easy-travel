@@ -20,6 +20,7 @@ const Header = () => {
       </LogoContainer>
       <MenuContainer>
         <Menu>
+          <MenuItem>Home</MenuItem>
           <MenuItem>explorar</MenuItem>
           <MenuItem>minhas viagens</MenuItem>
           <MenuItem>sobre</MenuItem>
@@ -31,7 +32,7 @@ const Header = () => {
         <Username>vitor silva</Username>
       </UserContainer>
 
-      <Logout />
+      <Logout>log out</Logout>
     </Container>
   );
 };

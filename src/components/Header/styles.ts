@@ -1,19 +1,71 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 100vw;
+  height: 6rem;
 
-export const LogoContainer = styled.div``;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9.8rem;
+
+  background-color: #15222b;
+`;
+
+export const LogoContainer = styled.div`
+  height: 2.3rem;
+`;
 
 export const MenuContainer = styled.nav``;
 
-export const Menu = styled.ul``;
+export const Menu = styled.ul`
+  display: flex;
+`;
 
-export const MenuItem = styled.li``;
+export const MenuItem = styled.li`
+  color: #fff;
+  list-style: none;
 
-export const UserContainer = styled.div``;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
 
-export const UserPicture = styled.img``;
+  margin-right: 5rem;
+  padding: 2rem;
+  cursor: pointer;
+`;
 
-export const Username = styled.p``;
+export const UserContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export const Logout = styled.button``;
+export const UserPicture = styled.img`
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+
+  margin-right: 1rem;
+`;
+
+export const Username = styled.p`
+  color: #fff;
+
+  text-transform: capitalize;
+
+  font-family: 'Open Sans', sans-serif;
+
+  font-size: 1.2rem;
+`;
+
+export const Logout = styled.button`
+  border: 0.1rem solid #fff;
+  background-color: transparent;
+
+  color: #fff;
+  padding: 0.3rem 1rem;
+
+  cursor: pointer;
+
+  text-transform: uppercase;
+`;
