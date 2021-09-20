@@ -4,6 +4,7 @@ import { useJwt } from 'react-jwt';
 import Router from 'next/router';
 import { setCookie, parseCookies } from 'nookies';
 
+import api from '../services/api';
 import { signInRequest } from '../services/auth';
 interface ProviderProps {
   children?: ReactNode;
@@ -37,7 +38,7 @@ export function AuthProvider({ children }: ProviderProps) {
     const { 'easytravel-token': token } = parseCookies();
 
     if (token) {
-      // enviar token pro back end e receber dados do usuario
+      api.get('/user').then((data) => setUser(data.data));
     }
   }, []);
 
@@ -47,7 +48,9 @@ export function AuthProvider({ children }: ProviderProps) {
     setCookie(undefined, 'easytravel-token', token, {
       maxAge: 60 * 60 * 1, // 1 hour
     });
-    console.log(user);
+
+    api.defaults.headers['Authorization'] = `Bearer ${token}`;
+
     setUser(user);
 
     Router.push('/');
