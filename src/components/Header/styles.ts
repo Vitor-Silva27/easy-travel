@@ -8,11 +8,12 @@ export const Container = styled.div`
   align-items: center;
   padding: 0 9.8rem;
 
-  background-color: #15222b;
+  background-color: #3c444c;
 `;
 
 export const LogoContainer = styled.div`
   height: 2.3rem;
+  filter: brightness(100);
 `;
 
 export const MenuContainer = styled.nav`
