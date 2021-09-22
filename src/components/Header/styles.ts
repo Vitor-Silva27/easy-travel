@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 0 9.8rem;
 
-  background-color: #3c444c;
+  background-color: #15222b;
 `;
 
 export const LogoContainer = styled.div`
