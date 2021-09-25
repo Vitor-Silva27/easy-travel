@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import Link from 'next/link';
 import Router from 'next/router';
 import nookies from 'nookies';
 
@@ -10,7 +11,6 @@ import {
   HeaderButton,
   Menu,
   UserContainer,
-  UserPicture,
   Username,
   MenuContainer,
   MenuItem,
@@ -36,16 +36,26 @@ const Header = () => {
       </LogoContainer>
       <MenuContainer>
         <Menu>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>explorar</MenuItem>
-          <MenuItem>minhas viagens</MenuItem>
-          <MenuItem>sobre</MenuItem>
+          <Link href="/">
+            <MenuItem>Home</MenuItem>
+          </Link>
+
+          <Link href="/explorar">
+            <MenuItem>explorar</MenuItem>
+          </Link>
+
+          <Link href="/">
+            <MenuItem>minhas viagens</MenuItem>
+          </Link>
+
+          <Link href="/">
+            <MenuItem>sobre</MenuItem>
+          </Link>
         </Menu>
       </MenuContainer>
       {user ? (
         <UserContainer>
-          <UserPicture src="https://github.com/Vitor-Silva27.png" />
-          <Username>{user.username}</Username>
+          <Username>Bem vindo, {user.username}</Username>
         </UserContainer>
       ) : (
         <HeaderButton onClick={(e) => handleClick(e, '/login')}>

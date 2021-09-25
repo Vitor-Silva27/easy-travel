@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from 'next/link';
+
 import {
   CardButton,
   Container,
@@ -13,15 +15,17 @@ import {
 } from './styles';
 
 interface PackType {
+  id: string;
   name: string;
   description: string;
   value: number;
+  thumb: string;
 }
 
-const TripCard = ({ name, description, value }: PackType) => {
+const TripCard = ({ id, name, description, value, thumb }: PackType) => {
   return (
     <Container>
-      <ThumbNail src="https://github.com/Vitor-Silva27.png" />
+      <ThumbNail src={thumb} />
       <ContentContainer>
         <Title>{name}</Title>
         <DescriptionContainer>
@@ -34,7 +38,9 @@ const TripCard = ({ name, description, value }: PackType) => {
           })}
         </Price>
         <CardButton>Comprar</CardButton>
-        <SecondaryButton>Ver mais</SecondaryButton>
+        <Link href={`/pacotes/${id}`}>
+          <SecondaryButton>Ver mais</SecondaryButton>
+        </Link>
       </ContentContainer>
     </Container>
   );

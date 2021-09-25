@@ -20,6 +20,9 @@ export const ThumbNail = styled.img`
   border-radius: 1rem;
   object-fit: cover;
   margin: 1.5rem;
+
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
 `;
 
 export const ContentContainer = styled.div`
@@ -66,6 +69,12 @@ export const CardButton = styled.a`
   color: #fff;
   padding: 0.25rem 4.5rem 0.4rem 4.5rem;
   line-height: 1;
+  transition: 0.2s;
+  cursor: pointer;
+
+  :hover {
+    background-color: #fb6d01;
+  }
 `;
 
 export const SecondaryButton = styled.a`
@@ -77,4 +86,11 @@ export const SecondaryButton = styled.a`
   padding: 0.2rem 4.5rem 0.35rem 4.5rem;
   line-height: 1;
   margin-left: 2rem;
+  transition: 0.3s;
+  cursor: pointer;
+
+  :hover {
+    background-color: #000;
+    color: #fff;
+  }
 `;

@@ -34,7 +34,12 @@ export const MenuItem = styled.li`
 
   margin-right: 5rem;
   padding: 2rem;
+  transition: 0.3s;
   cursor: pointer;
+
+  :hover {
+    color: #4cbaff;
+  }
 `;
 
 export const UserContainer = styled.div`
@@ -42,14 +47,6 @@ export const UserContainer = styled.div`
   position: relative;
   align-items: center;
   margin-right: 3rem;
-`;
-
-export const UserPicture = styled.img`
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-
-  margin-right: 1rem;
 `;
 
 export const Username = styled.p`
@@ -70,8 +67,14 @@ export const HeaderButton = styled.a`
   padding: 0.5rem 1.5rem;
 
   cursor: pointer;
+  transition: 0.3s;
 
   text-transform: uppercase;
   margin-right: 1.5rem;
   font-size: 1.2rem;
+
+  :hover {
+    color: #4cbaff;
+    border-color: #4cbaff;
+  }
 `;
