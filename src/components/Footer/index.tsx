@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Container>
       <p>Copyright © 2021 EasyTravel. All rights reserved.</p>
-      <img src="./assets/logo.svg" alt="logo" />
+      <img src="../assets/logo.svg" alt="logo" />
     </Container>
   );
 };

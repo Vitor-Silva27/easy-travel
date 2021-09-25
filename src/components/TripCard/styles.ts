@@ -62,16 +62,23 @@ export const Price = styled.p`
   margin: 1.2rem 0 1.9rem 0;
 `;
 
-export const CardButton = styled.a`
+export const CardButton = styled.button`
   font-size: 1.9rem;
+  border: none;
   font-family: 'Oswald', sans-serif;
   background-color: #fe8402;
   color: #fff;
-  padding: 0.25rem 4.5rem 0.4rem 4.5rem;
+  padding: 0.9rem 4.5rem 1rem 4.5rem;
   line-height: 1;
   transition: 0.2s;
   cursor: pointer;
-
+  :disabled {
+    background-color: #ccc;
+    cursor: default;
+    :hover {
+      background-color: #ccc;
+    }
+  }
   :hover {
     background-color: #fb6d01;
   }

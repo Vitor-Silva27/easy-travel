@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Link from 'next/link';
 
+import { AuthContext } from '../../contexts/AuthContext';
 import {
   CardButton,
   Container,
@@ -23,6 +24,7 @@ interface PackType {
 }
 
 const TripCard = ({ id, name, description, value, thumb }: PackType) => {
+  const { user } = useContext(AuthContext);
   return (
     <Container>
       <ThumbNail src={thumb} />
@@ -37,7 +39,11 @@ const TripCard = ({ id, name, description, value, thumb }: PackType) => {
             currency: 'BRL',
           })}
         </Price>
-        <CardButton>Comprar</CardButton>
+        {user ? (
+          <CardButton>Comprar</CardButton>
+        ) : (
+          <CardButton disabled>Comprar</CardButton>
+        )}
         <Link href={`/pacotes/${id}`}>
           <SecondaryButton>Ver mais</SecondaryButton>
         </Link>

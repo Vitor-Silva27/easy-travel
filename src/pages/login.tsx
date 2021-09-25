@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import background from '../assets/login-img.png';
 import { Button } from '../components/FormButton/styles';
 import Input from '../components/Input';
 import MainTitle from '../components/MainTitle';
@@ -35,13 +36,13 @@ export default function Login() {
         <title>Login</title>
       </Head>
       <FormWrapper>
-        <img src="./assets/logo.svg" alt="easy travel" className="logo" />
+        <img src="../assets/logo.svg" alt="easy travel" className="logo" />
         <MainTitle value="Fazer Login" />
         <Form onSubmit={handleSubmit(handleSignIn)}>
           <Input
             {...register('username')}
             value="username"
-            img_path="./assets/user_icon.svg"
+            img_path="../assets/user_icon.svg"
             type="text"
             isRequired
           />

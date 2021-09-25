@@ -52,7 +52,7 @@ export default function Cadastro() {
       />
 
       <FormWrapper>
-        <img src="./assets/logo.svg" alt="easy travel" className="logo" />
+        <img src="../assets/logo.svg" alt="easy travel" className="logo" />
         <MainTitle value="Cadastrar" />
         <Form onSubmit={handleSubmit(handleRegister)}>
           <Input

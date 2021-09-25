@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <Container>
       <LogoContainer>
-        <img src="./assets/logo.svg" alt="Logo easyTravel" />
+        <img src="/assets/logo.svg" alt="Logo easyTravel" />
       </LogoContainer>
       <MenuContainer>
         <Menu>

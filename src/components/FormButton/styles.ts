@@ -13,7 +13,13 @@ export const Button = styled.button`
   font-size: 1.9rem;
   cursor: pointer;
   text-align: center;
-
+  :disabled {
+    background-color: #ccc;
+    cursor: default;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
   &:hover {
     background-color: #e57600;
   }
