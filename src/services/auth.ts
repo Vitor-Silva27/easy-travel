@@ -1,9 +1,13 @@
 import api from './api';
 
+interface TripData {
+  trip_id: string;
+}
 interface User {
   id: string;
   is_admin: boolean;
   username: string;
+  trips: TripData[];
 }
 
 interface SignInReturn {
