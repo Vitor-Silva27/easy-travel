@@ -49,7 +49,7 @@ export default function Explorar() {
                 name={trip.name}
                 description={trip.description}
                 value={trip.value}
-                thumb={trip.images[0].url}
+                thumb={trip.images[0]?.url}
               />
             ))}
           </CardsContainer>

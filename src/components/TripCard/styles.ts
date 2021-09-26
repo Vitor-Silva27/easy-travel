@@ -59,7 +59,7 @@ export const Price = styled.p`
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
-  margin: 1.2rem 0 1.9rem 0;
+  margin: 1.2rem 0 1rem 0;
 `;
 
 export const CardButton = styled.button`
@@ -72,6 +72,7 @@ export const CardButton = styled.button`
   line-height: 1;
   transition: 0.2s;
   cursor: pointer;
+
   :disabled {
     background-color: #ccc;
     cursor: default;

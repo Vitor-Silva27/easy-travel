@@ -32,6 +32,7 @@ export const ImageContainer = styled.div`
 export const Title = styled.h1`
   color: #fff;
   font-size: 4.4rem;
+  width: max-content;
   font-family: 'Oswald', sans-serif;
   text-transform: capitalize;
   margin-top: 0.8rem;

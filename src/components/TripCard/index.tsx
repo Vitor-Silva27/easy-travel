@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 
 import Link from 'next/link';
+import Router from 'next/router';
 
 import { AuthContext } from '../../contexts/AuthContext';
+import api from '../../services/api';
 import {
   CardButton,
   Container,
@@ -25,6 +27,16 @@ interface PackType {
 
 const TripCard = ({ id, name, description, value, thumb }: PackType) => {
   const { user } = useContext(AuthContext);
+
+  async function handleClick() {
+    await api.post('/user/buy', {
+      tripId: id,
+      userId: user?.id,
+    });
+    alert(`Viagem ${name} comprada com sucesso!`);
+    Router.push('/');
+  }
+
   return (
     <Container>
       <ThumbNail src={thumb} />
@@ -40,7 +52,7 @@ const TripCard = ({ id, name, description, value, thumb }: PackType) => {
           })}
         </Price>
         {user ? (
-          <CardButton>Comprar</CardButton>
+          <CardButton onClick={handleClick}>Comprar</CardButton>
         ) : (
           <CardButton disabled>Comprar</CardButton>
         )}

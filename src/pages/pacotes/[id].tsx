@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 import Footer from '../../components/Footer';
 import { Button } from '../../components/FormButton/styles';
@@ -47,12 +47,24 @@ export default function Pacote() {
     });
   }, [id]);
 
+  async function handleClick() {
+    const res = await api.post('/user/buy', {
+      tripId: id,
+      userId: user?.id,
+    });
+    alert(`Viagem ${trip?.name} comprada com sucesso!`);
+    Router.push('/');
+  }
+
   return (
     <>
       <Header />
       <Container>
         <ImageContainer>
-          <img src={trip?.images[0].url} alt={trip?.name} />
+          <img
+            src={trip?.images[0]?.url || '/assets/login-img.png'}
+            alt={trip?.name}
+          />
         </ImageContainer>
         <Back />
         <ContentContainer>
@@ -77,7 +89,7 @@ export default function Pacote() {
             })}
           </Price>
           {user ? (
-            <Button>Comprar agora</Button>
+            <Button onClick={handleClick}>Comprar agora</Button>
           ) : (
             <Button disabled>entre para comprar</Button>
           )}
