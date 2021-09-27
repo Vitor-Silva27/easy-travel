@@ -23,7 +23,7 @@ export const PlaceHolder = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 31rem);
+  height: calc(100vh - 20rem);
 `;
 
 export const PlaceHolderText = styled.h3`

@@ -9,6 +9,14 @@ export const Container = styled.div`
   padding: 0 9.8rem;
 
   background-color: #15222b;
+  @media (max-width: 825px) {
+    flex-direction: column;
+    height: 16rem;
+    justify-content: space-evenly;
+  }
+  @media (max-width: 500px) {
+    padding: 0;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -39,6 +47,15 @@ export const MenuItem = styled.li`
 
   :hover {
     color: #4cbaff;
+  }
+
+  @media (max-width: 1134px) {
+    margin-right: 1rem;
+  }
+  @media (max-width: 973px) {
+    margin-right: 0.2rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
   }
 `;
 

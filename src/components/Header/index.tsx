@@ -48,7 +48,7 @@ const Header = () => {
             <MenuItem>minhas viagens</MenuItem>
           </Link>
 
-          <Link href="/">
+          <Link href="/sobre">
             <MenuItem>sobre</MenuItem>
           </Link>
         </Menu>

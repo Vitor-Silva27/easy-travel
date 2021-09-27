@@ -51,7 +51,7 @@ export function AgencyAuthProvider({ children }: ProviderProps) {
 
     setAgency(agency);
 
-    Router.push(`/`);
+    Router.push('/');
   }
 
   return (
