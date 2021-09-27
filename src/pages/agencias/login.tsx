@@ -4,29 +4,29 @@ import { useForm } from 'react-hook-form';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { Button } from '../components/FormButton/styles';
-import Input from '../components/Input';
-import MainTitle from '../components/MainTitle';
-import { AuthContext } from '../contexts/AuthContext';
+import { Button } from '../../components/FormButton/styles';
+import Input from '../../components/Input';
+import MainTitle from '../../components/MainTitle';
+import { AgencyAuthContext } from '../../contexts/AgencyContext';
 import {
   Form,
   LoginImage,
   LoginWrapper,
   FormWrapper,
   DontHave,
-} from '../styles/pages/Login';
+} from '../../styles/pages/Login';
 
 interface SignInData {
-  username: string;
+  agencyName: string;
   password: string;
 }
 
-export default function Login() {
+export default function AgencyLogin() {
   const { register, handleSubmit } = useForm();
-  const { signIn } = useContext(AuthContext);
+  const { agencySignIn } = useContext(AgencyAuthContext);
 
-  async function handleSignIn(data: SignInData) {
-    await signIn(data);
+  async function handleSignIn({ agencyName, password }: SignInData) {
+    await agencySignIn({ agencyName, password });
   }
 
   return (
@@ -39,8 +39,8 @@ export default function Login() {
         <MainTitle value="Fazer Login" />
         <Form onSubmit={handleSubmit(handleSignIn)}>
           <Input
-            {...register('username')}
-            value="username"
+            {...register('agencyName')}
+            value="Nome"
             img_path="../assets/user_icon.svg"
             type="text"
             isRequired
@@ -48,19 +48,19 @@ export default function Login() {
           <Input
             {...register('password')}
             value="senha"
-            img_path="./assets/password_icon.svg"
+            img_path="../assets/password_icon.svg"
             type="password"
             isRequired
           />
           <Button>Entrar</Button>
         </Form>
-        <Link href="/cadastro">
+        <Link href="/agencias/cadastro">
           <DontHave>
             Não tem uma conta? <span>Cadastre-se agora</span>
           </DontHave>
         </Link>
       </FormWrapper>
-      <LoginImage src="/assets/login-img.png" alt="Image of a traveller" />
+      <LoginImage src="/assets/agencia_login.jpg" alt="Image of a plane" />
     </LoginWrapper>
   );
 }

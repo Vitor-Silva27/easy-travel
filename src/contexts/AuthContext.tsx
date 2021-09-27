@@ -56,8 +56,11 @@ export function AuthProvider({ children }: ProviderProps) {
     api.defaults.headers['Authorization'] = `Bearer ${token}`;
 
     setUser(user);
-
-    Router.push('/');
+    if (user.is_admin === true) {
+      Router.push('/admin/dashboard');
+    } else {
+      Router.push('/');
+    }
   }
 
   return (
